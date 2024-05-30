@@ -3,11 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Practice1
 {
@@ -65,12 +64,23 @@ namespace Practice1
             {
                 List<Worker> workers = db.Workers.ToList();
 
+                dataGridView1.Columns.Clear();
+
+                dataGridView1.Columns.Add("id", "ID");
+                dataGridView1.Columns.Add("fcs", "ФИО");
+                dataGridView1.Columns.Add("invNumber", "Инвентарный номер");
+                dataGridView1.Columns.Add("equip", "Оборудование");
+                dataGridView1.Columns.Add("cost", "Цена");
+                dataGridView1.Columns.Add("adress", "Адрес");
+
+
                 foreach (var worker in workers)
                 {
                     workersBindingList.Add(worker);
                 }
             }
         }
+
 
         private void pictureRefreshGrid_Click(object sender, EventArgs e)
         {
