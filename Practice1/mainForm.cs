@@ -64,16 +64,6 @@ namespace Practice1
             {
                 List<Worker> workers = db.Workers.ToList();
 
-                dataGridView1.Columns.Clear();
-
-                dataGridView1.Columns.Add("id", "ID");
-                dataGridView1.Columns.Add("fcs", "ФИО");
-                dataGridView1.Columns.Add("invNumber", "Инвентарный номер");
-                dataGridView1.Columns.Add("equip", "Оборудование");
-                dataGridView1.Columns.Add("cost", "Цена");
-                dataGridView1.Columns.Add("adress", "Адрес");
-
-
                 foreach (var worker in workers)
                 {
                     workersBindingList.Add(worker);
