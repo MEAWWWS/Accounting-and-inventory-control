@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonChange = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,9 +44,7 @@
             this.textBoxEquip = new System.Windows.Forms.TextBox();
             this.textBoxCost = new System.Windows.Forms.TextBox();
             this.textBoxAdress = new System.Windows.Forms.TextBox();
-            this.pictureRefreshGrid = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRefreshGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxSearch
@@ -78,18 +73,9 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Поиск по ключевым словам:";
             // 
-            // buttonChange
-            // 
-            this.buttonChange.Location = new System.Drawing.Point(676, 357);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(112, 23);
-            this.buttonChange.TabIndex = 3;
-            this.buttonChange.Text = "Изменить";
-            this.buttonChange.UseVisualStyleBackColor = true;
-            // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(676, 415);
+            this.buttonDelete.Location = new System.Drawing.Point(676, 326);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 23);
             this.buttonDelete.TabIndex = 3;
@@ -99,22 +85,13 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(676, 386);
+            this.buttonAdd.Location = new System.Drawing.Point(676, 297);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(112, 23);
             this.buttonAdd.TabIndex = 3;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(676, 328);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(112, 23);
-            this.buttonSearch.TabIndex = 3;
-            this.buttonSearch.Text = "Поиск";
-            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -211,25 +188,11 @@
             this.textBoxAdress.Size = new System.Drawing.Size(214, 20);
             this.textBoxAdress.TabIndex = 5;
             // 
-            // pictureRefreshGrid
-            // 
-            this.pictureRefreshGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureRefreshGrid.Image = ((System.Drawing.Image)(resources.GetObject("pictureRefreshGrid.Image")));
-            this.pictureRefreshGrid.InitialImage = null;
-            this.pictureRefreshGrid.Location = new System.Drawing.Point(748, 284);
-            this.pictureRefreshGrid.Name = "pictureRefreshGrid";
-            this.pictureRefreshGrid.Size = new System.Drawing.Size(40, 38);
-            this.pictureRefreshGrid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureRefreshGrid.TabIndex = 6;
-            this.pictureRefreshGrid.TabStop = false;
-            this.pictureRefreshGrid.Click += new System.EventHandler(this.pictureRefreshGrid_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureRefreshGrid);
             this.Controls.Add(this.textBoxAdress);
             this.Controls.Add(this.textBoxCost);
             this.Controls.Add(this.textBoxEquip);
@@ -243,15 +206,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxSearch);
             this.Name = "mainForm";
             this.Text = "Учёт и контроль инвентаризации";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRefreshGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,10 +223,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -278,7 +236,6 @@
         private System.Windows.Forms.TextBox textBoxEquip;
         private System.Windows.Forms.TextBox textBoxCost;
         private System.Windows.Forms.TextBox textBoxAdress;
-        private System.Windows.Forms.PictureBox pictureRefreshGrid;
     }
 }
 

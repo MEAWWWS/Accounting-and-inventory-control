@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Data;
+using System.Runtime.Remoting.Contexts;
 
 
 namespace Practice1
@@ -71,48 +73,26 @@ namespace Practice1
             }
         }
 
-
-        private void pictureRefreshGrid_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                var selectedRow = dataGridView1.SelectedRows[0];
-                var id = Convert.ToInt32(selectedRow.Cells["id"].Value);
-
-                using (var context = new ApplicationContext1())
-                {
-                    var entity = context.Workers.Find(id);
-
-                    if (entity != null)
-                    {
-                        context.Workers.Remove(entity);
-                        context.SaveChanges();
-                    }
-                }
-
-                // Обновление источника данных dataGridView1
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = workersBindingList;
-            }
-        }
-
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (int.TryParse(textBoxCost.Text, out int cost))
             {
                 using (var dbContext = new ApplicationContext1())
                 {
-                    var data = new Worker { fcs = textBoxFcs.Text, invNumber = textBoxInvNumber.Text, equip = textBoxEquip.Text, cost = cost, adress = textBoxAdress.Text  };
+                    var data = new Worker { fcs = textBoxFcs.Text, invNumber = textBoxInvNumber.Text, equip = textBoxEquip.Text, cost = cost, adress = textBoxAdress.Text };
                     dbContext.Workers.Add(data);
                     dbContext.SaveChanges();
                 }
+
+                // Повторное привязывание данных к DataGridView
+                dataGridView1.DataSource = db.Workers.ToList();
             }
             else
             {
                 MessageBox.Show("Введите корректное числовое значение для стоимости.");
             }
         }
+
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -165,6 +145,5 @@ namespace Practice1
                 }
             }
         }
-
     }
 }
